@@ -1,0 +1,15 @@
+<br>
+<div class="container">
+    <table class="table table-light">
+        <tr th:if="${!news.isEmpty()}" th:each="n : ${news}">
+            <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgYltfcqJVavWZfw9SJLpow5B_cFq1a6ftQbFIPE5Sr0WxLgXAw2nAIX6NsFAg-AFV_TQ&usqp=CAU" width="30px" height="30px"></td>
+            <td class=""><h5 class="pl-5"><a th:href="${n.url}" th:text="${n.title}"
+                                             style="text-decoration: none"></a></h5>
+                <div class=" text-end text-muted"><img
+                        src="https://static.vecteezy.com/system/resources/previews/005/988/959/original/calendar-icon-free-vector.jpg"
+                        height="20px" width="20px"><span style="font-size: 10px;" th:text="${n.date}"></span></div>
+            </td>
+        </tr>
+        <tr th:if="${news.isEmpty()}" class="text-center">NO EXPLORES AFTER THIS DATE</tr>
+    </table>
+</div>
